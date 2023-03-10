@@ -1,0 +1,237 @@
+
+        Model Config
+        ------------
+        Model Type: adLIF
+        Number of layers: 3
+        Number of hidden neurons: 128
+        Dropout rate: 0.1
+        Normalization: batchnorm
+        Use bias: False
+        Bidirectional: False
+    
+
+        Training Config
+        ---------------
+        Use pretrained model: False
+        Only do testing: False
+        Load experiment folder: None
+        New experiment folder: None
+        Dataset name: sc
+        Data folder: ./dataset/SpeechCommands/speech_commands_v0.02
+        Log to file: True
+        Save best model: True
+        Batch size: 128
+        Number of epochs: 5
+        Start epoch: 0
+        Initial learning rate: 0.01
+        Scheduler patience: 1
+        Scheduler factor: 0.7
+        Use regularizers: False
+        Regularization factor: 0.5
+        Regularization min firing rate: 0.01
+        Reguarization max firing rate: 0.5
+        Use data augmentation: False
+    
+
+Device is set to cuda:1
+
+Number of examples in sc training set: 105829
+Number of examples in sc validation set: 9981
+Number of examples in sc testing set: 11005
+
+Created new spiking model:
+ SNN(
+  (snn): ModuleList(
+    (0): adLIFLayer(
+      (W): Linear(in_features=40, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (1): adLIFLayer(
+      (W): Linear(in_features=128, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (2): ReadoutLayer(
+      (W): Linear(in_features=128, out_features=35, bias=False)
+      (norm): BatchNorm1d(35, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+  )
+)
+
+Total number of trainable parameters is 27625
+
+------ Begin training ------
+
+
+        Model Config
+        ------------
+        Model Type: adLIF
+        Number of layers: 3
+        Number of hidden neurons: 128
+        Dropout rate: 0.1
+        Normalization: batchnorm
+        Use bias: False
+        Bidirectional: False
+    
+
+        Training Config
+        ---------------
+        Use pretrained model: False
+        Only do testing: False
+        Load experiment folder: None
+        New experiment folder: None
+        Dataset name: sc
+        Data folder: ./dataset/SpeechCommands/speech_commands_v0.02
+        Log to file: True
+        Save best model: True
+        Batch size: 128
+        Number of epochs: 5
+        Start epoch: 0
+        Initial learning rate: 0.01
+        Scheduler patience: 1
+        Scheduler factor: 0.7
+        Use regularizers: False
+        Regularization factor: 0.5
+        Regularization min firing rate: 0.01
+        Reguarization max firing rate: 0.5
+        Use data augmentation: False
+    
+
+Device is set to cuda:1
+
+Number of examples in sc training set: 105829
+Number of examples in sc validation set: 9981
+Number of examples in sc testing set: 11005
+
+Created new spiking model:
+ SNN(
+  (snn): ModuleList(
+    (0): adLIFLayer(
+      (W): Linear(in_features=40, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (1): adLIFLayer(
+      (W): Linear(in_features=128, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (2): ReadoutLayer(
+      (W): Linear(in_features=128, out_features=35, bias=False)
+      (norm): BatchNorm1d(35, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+  )
+)
+
+Total number of trainable parameters is 27625
+
+------ Begin training ------
+
+Epoch 1: lr=0.01
+Epoch 1: train loss=1.4782406923055937
+Epoch 1: train acc=0.6065396518491026
+Epoch 1: train mean act rate=0.059546671126750425
+Epoch 1: train elapsed time=0:02:56.567881
+Epoch 1: valid loss=0.6110677028504702
+Epoch 1: valid acc=0.8347684294871794
+Epoch 1: valid mean act rate=0.07531489431858063
+
+Best model saved with valid acc=0.8347684294871794
+
+-----------------------------
+
+Epoch 2: lr=0.01
+Epoch 2: train loss=0.6164816400304238
+Epoch 2: train acc=0.8333137226585415
+Epoch 2: train mean act rate=0.07348968849921053
+Epoch 2: train elapsed time=0:02:54.792799
+Epoch 2: valid loss=0.5435466134490875
+Epoch 2: valid acc=0.846689903846154
+Epoch 2: valid mean act rate=0.07510073482990265
+
+Best model saved with valid acc=0.846689903846154
+
+-----------------------------
+
+
+        Model Config
+        ------------
+        Model Type: adLIF
+        Number of layers: 3
+        Number of hidden neurons: 128
+        Dropout rate: 0.1
+        Normalization: batchnorm
+        Use bias: False
+        Bidirectional: False
+    
+
+        Training Config
+        ---------------
+        Use pretrained model: False
+        Only do testing: False
+        Load experiment folder: None
+        New experiment folder: None
+        Dataset name: sc
+        Data folder: ./dataset/SpeechCommands/speech_commands_v0.02
+        Log to file: True
+        Save best model: True
+        Batch size: 128
+        Number of epochs: 5
+        Start epoch: 0
+        Initial learning rate: 0.01
+        Scheduler patience: 1
+        Scheduler factor: 0.7
+        Use regularizers: False
+        Regularization factor: 0.5
+        Regularization min firing rate: 0.01
+        Reguarization max firing rate: 0.5
+        Use data augmentation: False
+    
+
+Device is set to cuda:1
+
+Number of examples in sc training set: 105829
+Number of examples in sc validation set: 9981
+Number of examples in sc testing set: 11005
+
+Created new spiking model:
+ SNN(
+  (snn): ModuleList(
+    (0): adLIFLayer(
+      (W): Linear(in_features=40, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (1): adLIFLayer(
+      (W): Linear(in_features=128, out_features=128, bias=False)
+      (norm): BatchNorm1d(128, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+    (2): ReadoutLayer(
+      (W): Linear(in_features=128, out_features=35, bias=False)
+      (norm): BatchNorm1d(35, eps=1e-05, momentum=0.05, affine=True, track_running_stats=True)
+      (drop): Dropout(p=0.1, inplace=False)
+    )
+  )
+)
+
+Total number of trainable parameters is 27625
+
+------ Begin training ------
+
+Epoch 1: lr=0.01
+Epoch 1: train loss=1.4782406923055937
+Epoch 1: train acc=0.6065396518491026
+Epoch 1: train mean act rate=0.059546671126750425
+Epoch 1: train elapsed time=0:02:55.624647
+Epoch 1: valid loss=0.6110677028504702
+Epoch 1: valid acc=0.8347684294871794
+Epoch 1: valid mean act rate=0.07531489431858063
+
+Best model saved with valid acc=0.8347684294871794
+
+-----------------------------
+

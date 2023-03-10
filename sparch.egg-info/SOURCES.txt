@@ -1,0 +1,17 @@
+README.md
+setup.py
+sparch/__init__.py
+sparch/exp.py
+sparch.egg-info/PKG-INFO
+sparch.egg-info/SOURCES.txt
+sparch.egg-info/dependency_links.txt
+sparch.egg-info/top_level.txt
+sparch/dataloaders/__init__.py
+sparch/dataloaders/nonspiking_datasets.py
+sparch/dataloaders/spiking_datasets.py
+sparch/models/__init__.py
+sparch/models/anns.py
+sparch/models/snns.py
+sparch/parsers/__init__.py
+sparch/parsers/model_config.py
+sparch/parsers/training_config.py

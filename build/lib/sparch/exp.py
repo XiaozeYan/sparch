@@ -16,7 +16,6 @@ import logging
 import os
 import time
 from datetime import timedelta
-from tqdm import tqdm
 
 import numpy as np
 import torch
@@ -79,7 +78,7 @@ class Experiment:
         print_training_options(args)
 
         # Set device
-        self.device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         logging.info(f"\nDevice is set to {self.device}\n")
 
         # Initialize dataloaders and model
@@ -120,7 +119,7 @@ class Experiment:
             for e in range(best_epoch + 1, best_epoch + self.nb_epochs + 1):
                 self.train_one_epoch(e)
                 best_epoch, best_acc = self.valid_one_epoch(e, best_epoch, best_acc)
-            
+
             logging.info(f"\nBest valid acc at epoch {best_epoch}: {best_acc}\n")
             logging.info("\n------ Training finished ------\n")
 
@@ -176,8 +175,8 @@ class Experiment:
             exp_folder = "exp/test_exps/" + outname.replace(".", "_")
 
         # For a new model check that out path does not exist
-        # if not self.use_pretrained_model and os.path.exists(exp_folder):
-        #     raise FileExistsError(errno.EEXIST, os.strerror(errno.EEXIST), exp_folder)
+        if not self.use_pretrained_model and os.path.exists(exp_folder):
+            raise FileExistsError(errno.EEXIST, os.strerror(errno.EEXIST), exp_folder)
 
         # Create folders to store experiment
         self.log_dir = exp_folder + "/log/"
@@ -348,24 +347,24 @@ class Experiment:
         self.net.train()
         losses, accs = [], []
         epoch_spike_rate = 0
-        print(len(self.train_loader))
+
         # Loop over batches from train set
-        for step, (x, _, y) in tqdm(enumerate(self.train_loader), desc=f"epoch {e}", dynamic_ncols=True, total=len(self.train_loader)):
-        # for step, (x, _, y) in enumerate(self.train_loader):
-            
+        for step, (x, _, y) in enumerate(self.train_loader):
+
             # Dataloader uses cpu to allow pin memory
             x = x.to(self.device)
             y = y.to(self.device)
 
             # Forward pass through network
             output, firing_rates = self.net(x)
+
             # Compute loss
             loss_val = self.loss_fn(output, y)
             losses.append(loss_val.item())
 
             # Spike activity
             if self.net.is_snn:
-                epoch_spike_rate += torch.mean(firing_rates).item()
+                epoch_spike_rate += torch.mean(firing_rates)
 
                 if self.use_regularizers:
                     reg_quiet = F.relu(self.reg_fmin - firing_rates).sum()
